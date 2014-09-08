@@ -46,6 +46,7 @@ gem 'capybara'
 gem 'pg'
 gem 'rails_12factor'
 gem 'bootstrap-sass'
+gem 'foreigner'
 
 #аутентификация
 gem 'devise'

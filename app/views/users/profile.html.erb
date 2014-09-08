@@ -1,2 +1,18 @@
 <h1>Users#profile</h1>
 <p>Find me in app/views/users/profile.html.erb</p>
+<b> Картинки2 </b>
+
+<%= form_tag({action: :create_slideshow}, multipart: true) do %> <!--Create category form-->
+  <%= label_tag(:Name, 'Name:') %>
+  <%= text_field_tag(:Name) %>
+  <%= submit_tag("Create slideshow") %>
+<% end %>
+
+
+<%= form_tag({action: :upload}, multipart: true) do %> <!--Upload image form-->
+  <%= label_tag(:Name, 'Name:') %>
+  <%= text_field_tag(:Name) %>
+  <%= file_field_tag 'file' %>
+  <%= submit_tag("Upload image") %>
+<% end %>
+
