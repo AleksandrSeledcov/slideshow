@@ -3,16 +3,29 @@
 <b> Картинки2 </b>
 
 <%= form_tag({action: :create_slideshow}, multipart: true) do %> <!--Create category form-->
-  <%= label_tag(:Name, 'Name:') %>
-  <%= text_field_tag(:Name) %>
+  <%= label_tag(:gallery_name, 'Gallery name:') %>
+  <%= text_field_tag(:gallery_name) %>
+  <%= label_tag(:gallery_description, 'Gallery Description:') %>
+  <%= text_field_tag(:gallery_description) %>
   <%= submit_tag("Create slideshow") %>
 <% end %>
 
+<br>
+
+<%= form_tag({action: :delete_slideshow}, multipart: true) do %>
+  <%= select_tag(:gallery_name, options_for_select(@gallery_names)) %>
+  <%= submit_tag("Delete slideshow") %>
+<% end %>
+
+<br>
 
 <%= form_tag({action: :upload}, multipart: true) do %> <!--Upload image form-->
-  <%= label_tag(:Name, 'Name:') %>
-  <%= text_field_tag(:Name) %>
-  <%= file_field_tag 'file' %>
+  <%= label_tag(:image_name, 'Image Name:') %>
+  <%= text_field_tag(:image_name) %>
+  <%= label_tag(:gallery_name, 'Gallery Name:') %>
+  <%= select_tag(:gallery_name, options_for_select(@gallery_names)) %>
+  <%= file_field_tag :file %>
   <%= submit_tag("Upload image") %>
 <% end %>
+
 

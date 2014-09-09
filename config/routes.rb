@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   post 'users/create_slideshow'
 
+  post 'users/delete_image'
+
+  post 'users/delete_slideshow'
+
   get 'users/profile', as: 'user_root'
 
   # The priority is based upon order of creation: first created -> highest priority.
